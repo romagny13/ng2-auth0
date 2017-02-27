@@ -59,7 +59,7 @@ export const options = {
 ```
 
 Add AUTH_PROVIDERS to AppModule 'providers' array
-```
+```js
 import { AUTH_PROVIDERS } from 'angular2-jwt';
 ```
 
