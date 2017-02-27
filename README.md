@@ -29,7 +29,7 @@ Add in index html page
 ```
 
 Create config 'auth.config.ts' + options (login dialog box)
-```
+```js
 interface AuthConfiguration {
     clientID: string;
     domain: string;
