@@ -58,9 +58,44 @@ export const options = {
 
 ```
 
+"AppModule"
+
 Add AUTH_PROVIDERS to AppModule 'providers' array
 ```js
 import { AUTH_PROVIDERS } from 'angular2-jwt';
+```
+
+Issue with Angular Cli 1.0.0 <a href="https://github.com/auth0/angular2-jwt/issues/258">https://github.com/auth0/angular2-jwt/issues/258</a>
+
+```js
+import { AuthHttp, AuthConfig } from 'angular2-jwt';
+
+export function authHttpServiceFactory(http: Http, options: RequestOptions) {
+  return new AuthHttp(new AuthConfig({}), http, options);
+}
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    ProfileComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    routing
+  ],
+  providers: [
+    {
+      provide: AuthHttp,
+      useFactory: authHttpServiceFactory,
+      deps: [Http, RequestOptions]
+    },
+    AuthService, AuthGuard],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
 ```
 
 Create AuthService, components, guard, etc.
