@@ -4,8 +4,8 @@ interface AuthConfiguration {
 }
 
 export const config: AuthConfiguration = {
-    clientID: '...',
-    domain: '...'
+    clientID: 'ElFhJVEHbWVvzNBLvGQYYKKKCHflNxvy',
+    domain: 'romagny13.eu.auth0.com'
 };
 
 // options : https://auth0.com/docs/libraries/lock/v10/customization
